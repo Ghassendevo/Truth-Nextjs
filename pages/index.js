@@ -16,6 +16,9 @@ export default function Home() {
   const goToSingup = () =>{
     router.push('/signup')
   }
+  const goToRandomChat = ()=>{
+    router.push('/randomChat')
+  }
   return (
     <div style={{ marginTop: 10, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
       <Header />
@@ -32,7 +35,7 @@ export default function Home() {
             <p>Create new truth and join our team</p>
           </Card.Body>
         </Card>
-        <Card className={styles.card} isPressable isHoverable variant="bordered" css={{ mw: "400px" }}>
+        <Card onClick={goToRandomChat} className={styles.card} isPressable isHoverable variant="bordered" css={{ mw: "400px" }}>
           <Card.Body>
             <h2>Random Chat &rarr;</h2>
             <p>Chat with random people ! with just easy steps</p>

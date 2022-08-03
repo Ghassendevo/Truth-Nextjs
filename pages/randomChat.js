@@ -10,9 +10,8 @@ import Link from 'next/link';
 import { useState } from 'react';
 export default () => {
     const [data, setData] = useState({
-        fullname: '',
-        username: '',
-        password: '',
+        name:'',
+        roomId:'',
     })
     const [isLoading, setisLaoding] = useState(false)
     const join = (e) => {
@@ -29,15 +28,13 @@ export default () => {
         <div style={{ marginTop: 10, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
             <Header />
             <div className={styles.loginmain}>
-                <h3>Singup</h3>
-                <p>Make your account and join the world best developers !</p>
+                <h3>RandomChat</h3>
+                <p>Join your RandomChat and start talking to others !</p>
                 <div style={{ marginTop: 10, width: '100%' }}>
                     <Spacer y={1.6} />
-                    <Input onChange={e => setData({ fullname: e.target.value, username: data.username, password: data.password })} labelPlaceholder='Full name' width={'100%'} className={styles.input} />
-                    <Spacer y={1} />
-                    <Input onChange={e => setData({ fullname: data.fullname, username: e.target.value, password: data.password })} labelPlaceholder='username' width={'100%'} className={styles.input} />
-                    <Spacer y={1} />
-                    <Input.Password onKeyUp={e => join(e)} onChange={e => setData({ fullname: data.fullname, username: data.username, password: e.target.value })} labelPlaceholder="Password" width='100%' height='200px' />
+                    <Input onChange={e => setData({name:e.target.value,roomId:data.roomId })} labelPlaceholder='Your name' width={'100%'} className={styles.input} />
+                    <Spacer y={1.5} />
+                    <Input onChange={e => setData({name:data.name,roomId:e.target.value })} labelPlaceholder='Room id' width={'100%'} className={styles.input} />
                     <Spacer y={1.6} />
                     <button onClick={e => join('click')} className={styles.login}>
                         {isLoading && <Loading type="spinner" size="lg" color={'white'}/> || <><p>Join</p> <TbWorldUpload size={20} /></>}
