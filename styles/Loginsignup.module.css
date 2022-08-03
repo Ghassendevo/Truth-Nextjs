@@ -1,0 +1,38 @@
+.loginmain {
+    font-size: 25px;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid rgba(0, 0, 0, 0.159);
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.input {
+    width: 100% !important;
+}
+
+.login {
+    width: 100%;
+    color: white;
+    background-color: #0070f3;
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    transition: 0.2s;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.login:hover {
+    background-color: #1058ab;
+    cursor: pointer;
+}
+
+.login>p {
+    margin-right: 10px;
+    font-size: 20px;
+    line-height: 0;
+}
