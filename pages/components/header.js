@@ -4,7 +4,7 @@ export const Header = () => {
     return (
         <div style={{textAlign:'center'}}>
             <h1 className={styles.title}>
-                Welcome to <a>TRUTH!</a>
+                Welcome to <a>NextChat!</a>
             </h1>
             <p className={styles.description}>
                 Get started developed by {' '}
