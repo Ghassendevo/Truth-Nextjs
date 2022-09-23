@@ -16,8 +16,42 @@
 
 .rightchat {
     width: 100%;
-    height: 85vh;
+    height: 100vh;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.forsendMessage {
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.sendMessageButton {
+    background-color: #0070f3;
+    width: 90px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sendMessageButton:hover {
+    transition: 0.2;
+    background-color: #1c66ba;
+    cursor: pointer;
+}
+
+.lastinchat {
+    height: 85vh;
+    overflow: auto;
+}
+
+.forChat {
+    height: 100vh;
 }
 
 .leftchat>h2 {

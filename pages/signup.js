@@ -8,7 +8,7 @@ import { AiOutlineLogin } from 'react-icons/ai';
 import { TbWorldUpload } from 'react-icons/tb'
 import Link from 'next/link';
 import { useState } from 'react';
-export default () => {
+const Singup = () => {
     const [data, setData] = useState({
         fullname: '',
         username: '',
@@ -51,3 +51,4 @@ export default () => {
         </div>
     )
 }
+export default Singup;

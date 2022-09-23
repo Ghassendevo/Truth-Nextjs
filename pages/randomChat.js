@@ -10,13 +10,12 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { io } from 'socket.io-client';
 import { useRouter } from 'next/router';
-import { BrowserRoute as Router, Switch, Route } from 'react-router-dom';
 import { Chat } from './chat';
 import { isChat } from './redux/ischat';
 import { Provider } from 'react-redux';
 const socket = io.connect('http://localhost:3001')
-export default () => {
-  
+const RandomChat = () => {
+
     const router = useRouter()
     const [islaoding, setisLoading] = useState(false)
     const [isChat, setisChat] = useState(false)
@@ -29,7 +28,8 @@ export default () => {
         if (e.key == 'Enter') {
             if (data.name !== '' && data.roomId !== '') {
                 setisLaoding(!isLoading)
-                await socket.emit('join_room', data.roomId)
+                
+                await socket.emit('join_room', data)
                 setisLaoding(!isLoading)
                 setisChat(!isChat)
             }
@@ -37,7 +37,7 @@ export default () => {
         else if (e == 'click') {
             if (data.name !== '' && data.roomId !== '') {
                 setisLaoding(!isLoading)
-                await socket.emit('join_room', data.roomId)
+                await socket.emit('join_room', data)
                 setisLaoding(!isLoading)
                 localStorage.setItem('isChat', true)
                 setisChat(!isChat)
@@ -47,7 +47,8 @@ export default () => {
     }
 
     return (
-        <Provider>
+
+        <>
             {!isChat ? (
                 <div style={{ marginTop: 10, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                     <Header />
@@ -74,6 +75,8 @@ export default () => {
                 <Chat socket={socket} name={data.name} roomId={data.roomId} />
             )
             }
-        </Provider>
+        </>
+
     )
 }
+export default RandomChat;

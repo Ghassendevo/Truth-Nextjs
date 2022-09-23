@@ -6,7 +6,7 @@ import { LockIcon } from "./LockIcon.js";
 import { UserIcon } from './UserIcon';
 import { AiOutlineLogin } from 'react-icons/ai';
 import Link from 'next/link';
-export default () => {
+ const Login =  () => {
     return (
         <div style={{ marginTop: 10, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
             <Header />
@@ -32,3 +32,4 @@ export default () => {
 
     )
 }
+export default Login;
